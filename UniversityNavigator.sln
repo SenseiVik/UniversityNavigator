@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityNavigator.Web", "UniversityNavigator\UniversityNavigator.Web.csproj", "{849FFA6C-F7BA-4AD0-BA55-EF082A958DE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityNavigator.Web", "WEB\UniversityNavigator\UniversityNavigator.Web.csproj", "{849FFA6C-F7BA-4AD0-BA55-EF082A958DE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WEB", "WEB", "{912F0F99-ECC4-4E57-AA2D-C9985418C653}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{849FFA6C-F7BA-4AD0-BA55-EF082A958DE4} = {912F0F99-ECC4-4E57-AA2D-C9985418C653}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D2BC148-991E-478A-AE7C-CF6C923C2F74}
