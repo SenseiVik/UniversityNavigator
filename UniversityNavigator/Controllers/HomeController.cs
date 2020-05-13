@@ -16,6 +16,7 @@ namespace UniversityNavigator.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            //ban
         }
 
         public IActionResult Index()
