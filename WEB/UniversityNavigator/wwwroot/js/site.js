@@ -5,15 +5,19 @@
 // Material Select Initialization
 
 // function for data load at seach btn submit
-function submitSearch(event) {
-    let audience = $("#search-btn").val();
-
+async function submitSearch(event) {
+    let audience = $("#input_search").val();
+    var _url = "https://localhost:44395/api/universitynavigator/audience/" + audience;
     await $.ajax({
         type: 'GET',
-        url: '',
-        data: { audienceId = audienceId }
-    }).done(function (img) {
-
+        url: _url,
+        error: function () {
+            alert("ERROR");
+        }
+    }).done(function (data) {
+        $(data).each(function (index, item) {
+            alert(item.audienceId);
+        })
     })
 }
 
