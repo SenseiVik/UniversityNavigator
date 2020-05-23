@@ -21,6 +21,7 @@ namespace UniversityNavigator.DomainModel.GeneratedDataModel
         {
             if (!optionsBuilder.IsConfigured)
             {
+                //optionsBuilder.UseLazyLoadingProxies();
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-4V1BOFI\\SQLEXPRESS;Initial Catalog=UniversityNavigator;User ID=sa;Password=qwerty123");
             }
         }

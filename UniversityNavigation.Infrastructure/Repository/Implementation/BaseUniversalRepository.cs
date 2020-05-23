@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 using UniversityNavigation.Infrastructure.Repository.Interface;
 
@@ -53,7 +51,7 @@ namespace UniversityNavigation.Infrastructure.Repository.Implementation
             }
         }
 
-        public TEntity GetByID(int id)
+        public virtual TEntity GetByID(object id)
         {
             return this.dbSet.Find(id);
         }

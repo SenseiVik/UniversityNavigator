@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using UniversityNavigation.Infrastructure.Repository.Interface;
+using UniversityNavigator.BLL.Repository;
+using UniversityNavigator.DomainModel.GeneratedDataModel;
 
 namespace UniversityNavigatorApi
 {
@@ -25,7 +22,10 @@ namespace UniversityNavigatorApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddDbContext<UniversityNavigatorContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UniversityNavigatorConnection")));
+            services.AddTransient<IRepositoryUniversal<Audience>, AudienceRepository>();
+            services.AddTransient<IRepositoryUniversal<AudienceImage>, AudienceImageRepository>();
+            services.AddTransient<IRepositoryUniversal<AudienceQuickSearch>, AudienceQuickSearchRepository>();
             services.AddControllers();
         }
 
