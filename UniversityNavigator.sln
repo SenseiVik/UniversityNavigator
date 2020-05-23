@@ -9,7 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WEB", "WEB", "{912F0F99-ECC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{045C72BC-47D2-4A5A-A56E-C16705221BB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityNavigation.Infrastructure", "UniversityNavigation.Infrastructure\UniversityNavigation.Infrastructure.csproj", "{CBADC72A-554A-4649-9C93-D305292D28EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityNavigation.Infrastructure", "UniversityNavigation.Infrastructure\UniversityNavigation.Infrastructure.csproj", "{CBADC72A-554A-4649-9C93-D305292D28EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseScripts", "DatabaseScripts", "{AD28B573-036F-45DC-8526-6C8D07C9C661}"
+	ProjectSection(SolutionItems) = preProject
+		CreateDatabase.sql = CreateDatabase.sql
+		FillDatabase.sql = FillDatabase.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
