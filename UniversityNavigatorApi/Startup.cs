@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using UniversityNavigation.Infrastructure.Repository.Interface;
 using UniversityNavigator.BLL.Repository;
 using UniversityNavigator.DomainModel.GeneratedDataModel;
+using Microsoft.OpenApi.Models;
 
 namespace UniversityNavigatorApi
 {
@@ -27,6 +28,19 @@ namespace UniversityNavigatorApi
             services.AddTransient<IRepositoryUniversal<AudienceImage>, AudienceImageRepository>();
             services.AddTransient<IRepositoryUniversal<AudienceQuickSearch>, AudienceQuickSearchRepository>();
             services.AddControllers();
+
+            //swagger
+            services.AddSwaggerGen(options => options.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "UniversityNavigatorApi",
+                Version = "v1",
+                Description = "Api that provides all information related to University location/navigation",
+                Contact = new OpenApiContact
+                {
+                    Name = "Viktor Siryk",
+                    Email = "senseyvik22@gmail.com"
+                }
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +50,13 @@ namespace UniversityNavigatorApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            #region Swagger
+
+            app.UseSwagger();
+            app.UseSwaggerUI(context => context.SwaggerEndpoint("/swagger/v1/swagger.json", "UniversityNavigatorApi"));
+
+            #endregion
 
             app.UseHttpsRedirection();
 
