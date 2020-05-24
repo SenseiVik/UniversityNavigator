@@ -5,20 +5,20 @@
 // Material Select Initialization
 
 // function for data load at seach btn submit
+
+function fillAudienceInfo(data) {
+    $("#audience-image").attr("src", `data:image/jpeg;base64,${data[0].imageBytes}`);
+}
+
+
 async function submitSearch(event) {
-    let audience = $("#input_search").val();
-    var _url = "https://localhost:44395/api/universitynavigator/audience/" + audience;
+    let _audience = $("#input_search").val();
+    let _url = "https://localhost:44395/api/universitynavigator/audience/" + _audience;
+
     await $.ajax({
         type: 'GET',
         url: _url,
-        error: function () {
-            alert("ERROR");
-        }
-    }).done(function (data) {
-        $(data).each(function (index, item) {
-            alert(item.audienceId);
-        })
-    })
+    }).done(data => fillAudienceInfo(data));
 }
 
 $(document).ready(function () {
